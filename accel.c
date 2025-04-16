@@ -52,9 +52,7 @@ void uint8_to_hex(uint8_t value, char *buf) {
 __interrupt void Port_1_ISR(void) {
     if (P1IFG & BIT4) {
  
-        uint8_t intSrc = read_i2c(INT1_SRC);
-
-        char output[3];
+        read_i2c(INT1_SRC);
 
         reset_lines();
 
